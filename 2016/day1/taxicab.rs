@@ -6,7 +6,7 @@ enum Dir {
     N, E, S, W
 }
 
-enum Instruction {
+enum Movement {
     Right(i32),
     Left(i32),
 }
@@ -22,15 +22,15 @@ impl Map {
         Map{x: 0, y: 0, dir: Dir::N}
     }
 
-    fn execute(&self, i: Instruction) -> Map {
+    fn move(&self, i: Movement) -> Map {
         let (dir, n) = match i {
-            Instruction::Right(n) => match self.dir {
+            Movement::Right(n) => match self.dir {
                 Dir::N => (Dir::E, n),
                 Dir::E => (Dir::S, n),
                 Dir::S => (Dir::W, n),
                 Dir::W => (Dir::N, n)
             },
-            Instruction::Left(n) => match self.dir {
+            Movement::Left(n) => match self.dir {
                 Dir::N => (Dir::W, n),
                 Dir::W => (Dir::S, n),
                 Dir::S => (Dir::E, n),
@@ -61,16 +61,16 @@ fn main() {
     let map = data
         .split(", ")
         .map(|s| s.trim())
-        .map(|i| {
-            let bytes = i.as_bytes();
+        .map(|m| {
+            let bytes = m.as_bytes();
             let (first, rest) = bytes.split_at(1);
             let n: i32 = from_utf8(rest).unwrap().parse().unwrap();
             match first[0] as char {
-                'R' => Instruction::Right(n),
-                'L' => Instruction::Left(n),
+                'R' => Movement::Right(n),
+                'L' => Movement::Left(n),
                 d => panic!("invalid instruction direction {}", d)
             }
         })
-        .fold(Map::new(), |m, i| m.execute(i));
+        .fold(Map::new(), |map, mov| map.move(mov));
     println!("{}", map.distance());
 }
