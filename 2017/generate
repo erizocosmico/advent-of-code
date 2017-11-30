@@ -1,0 +1,6 @@
+#!/bin/sh
+
+PROJECT=$1
+mkdir "$PROJECT"
+cat sample/jbuild | sed "s/sample/main_$PROJECT/" > "$PROJECT/jbuild"
+cat sample/sample.ml | sed "s/sample/main_$PROJECT/" > "$PROJECT/main_$PROJECT.ml"

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PROJECT=$1
+make build > /dev/null
+"./_build/default/$PROJECT/main_$PROJECT.exe"

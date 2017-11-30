@@ -1,0 +1,13 @@
+opam-version: "1.2"
+name: "advent-of-code-2017"
+version: "0.1"
+maintainer: "Miguel Molina <miguel@erizocosmi.co>"
+build: [
+  ["jbuilder" "build"]
+]
+install: ["jbuilder" "install"]
+depends: [
+  "base"
+  "stdio"
+  "jbuilder" {build & >= "1.0+beta12"}
+]
