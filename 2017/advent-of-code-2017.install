@@ -1,9 +1,0 @@
-lib: [
-  "_build/install/default/lib/advent-of-code-2017/META" {"META"}
-  "_build/install/default/lib/advent-of-code-2017/opam" {"opam"}
-]
-bin: [
-  "_build/install/default/bin/sample" {"sample"}
-  "_build/install/default/bin/main_01b" {"main_01b"}
-  "_build/install/default/bin/main_01" {"main_01"}
-]
