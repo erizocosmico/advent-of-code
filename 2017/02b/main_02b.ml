@@ -10,11 +10,11 @@ let read_input name =
 let line_division nums =
   let rec find hd tl =
     let res = List.find_map tl ~f:(fun n -> if hd mod n = 0 then
-      Some(hd / n)
-    else if n mod hd = 0 then
-      Some(n / hd)
-    else
-      None) in
+                                      Some(hd / n)
+                                    else if n mod hd = 0 then
+                                      Some(n / hd)
+                                    else
+                                      None) in
     match res with
     | Some(n) -> n
     | None -> find (List.nth_exn tl 0) (List.drop tl 1)

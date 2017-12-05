@@ -10,11 +10,11 @@ let read_input name =
 let find_minmax nums =
   let find (min, max) n =
     let lowest = match min with
-    | Some(num) -> if n < num then n else num
-    | None -> n in
+      | Some(num) -> if n < num then n else num
+      | None -> n in
     let highest = match max with
-    | Some(num) -> if n > num then n else num
-    | None -> n in
+      | Some(num) -> if n > num then n else num
+      | None -> n in
     (Some(lowest), Some(highest))
   in
   let (min, max) = List.fold_left nums ~init:(None, None) ~f:find in
