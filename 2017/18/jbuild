@@ -1,0 +1,7 @@
+(jbuild_version 1)
+
+(executable
+ ((name main_18)
+  (public_name main_18)
+  (preprocess (pps (ppx_deriving.show)))
+(libraries (base stdio))))
