@@ -1,0 +1,6 @@
+(jbuild_version 1)
+
+(executable
+ ((name main_22b)
+  (public_name main_22b)
+(libraries (base stdio))))
