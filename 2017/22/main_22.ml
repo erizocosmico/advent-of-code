@@ -21,15 +21,13 @@ type carrier = {
 }
 
 module Point = struct
-  type t = int * int
-  include Comparator.Make (struct
-      type t = int * int
-      let sexp_of_t _ = Sexp.Atom "_"
-      let compare (x1, y1) (x2, y2) =
-        match Int.compare x1 x2 with
-        | 0 -> Int.compare y1 y2
-        | n -> n
-    end)
+  module T = struct
+    type t = int * int
+    [@@deriving sexp, compare]
+  end
+
+  include Comparable.Make(T)
+  include T  
 end
 
 let move {dir; pos = (x, y)} =

@@ -105,7 +105,7 @@ let () =
               |> Map.of_alist_exn (module Matrix)
   in
   let m = ref initial in
-  for i = 0 to 4 do
+  for i = 0 to 17 do
     m := iter rules !m
   done;
   Array.fold !m ~init:0 ~f:(fun acc row ->
