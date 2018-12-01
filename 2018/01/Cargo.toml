@@ -1,0 +1,14 @@
+[package]
+name = "problem_01"
+version = "0.1.0"
+authors = ["Miguel Molina <miguel@erizocosmi.co>"]
+
+[[bin]]
+name = "01"
+path = "src/01.rs"
+
+[[bin]]
+name = "01b"
+path = "src/01b.rs"
+
+[dependencies]
