@@ -1,0 +1,17 @@
+[package]
+name = "day_04"
+version = "0.1.0"
+authors = ["Miguel Molina <miguel@erizocosmi.co>"]
+
+[[bin]]
+name = "04"
+path = "src/04.rs"
+
+[[bin]]
+name = "04b"
+path = "src/04b.rs"
+
+[dependencies]
+regex = "1.1.0"
+lazy_static = "1.2.0"
+itertools = "0.7.11"
