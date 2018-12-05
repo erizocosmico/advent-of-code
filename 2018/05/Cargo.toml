@@ -1,0 +1,14 @@
+[package]
+name = "day_05"
+version = "0.1.0"
+authors = ["Miguel Molina <miguel@erizocosmi.co>"]
+
+[[bin]]
+name = "05"
+path = "src/05.rs"
+
+[[bin]]
+name = "05b"
+path = "src/05b.rs"
+
+[dependencies]
