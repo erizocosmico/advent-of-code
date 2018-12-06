@@ -1,16 +1,5 @@
 use std::collections::HashMap;
-use std::fs::File;
-use std::io::prelude::*;
 use std::str::Chars;
-
-fn read_input() -> String {
-    let mut contents = String::new();
-    File::open("input.txt")
-        .expect("input file not found")
-        .read_to_string(&mut contents)
-        .expect("unable to read file");
-    contents
-}
 
 fn frequencies(input: Chars) -> Vec<(char, i32)> {
     let mut m: HashMap<char, i32> = HashMap::new();
@@ -43,7 +32,8 @@ fn checksum(input: String) -> i32 {
 }
 
 fn main() {
-    println!("{}", checksum(read_input()));
+    let input = include_str!("input.txt").into();
+    println!("{}", checksum(input));
 }
 
 #[test]

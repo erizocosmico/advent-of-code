@@ -1,15 +1,4 @@
 use std::collections::HashSet;
-use std::fs::File;
-use std::io::prelude::*;
-
-fn read_input() -> String {
-    let mut contents = String::new();
-    File::open("input.txt")
-        .expect("input file not found")
-        .read_to_string(&mut contents)
-        .expect("unable to read file");
-    contents
-}
 
 fn scanned_polymer_size(input: String) -> usize {
     let mut units: Vec<_> = input.chars().collect();
@@ -51,7 +40,8 @@ fn solve(input: String) -> usize {
 }
 
 fn main() {
-    println!("{}", solve(read_input()));
+    let input = include_str!("input.txt").into();
+    println!("{}", solve(input));
 }
 
 #[test]

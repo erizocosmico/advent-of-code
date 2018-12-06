@@ -1,15 +1,3 @@
-use std::fs::File;
-use std::io::prelude::*;
-
-fn read_input() -> String {
-    let mut contents = String::new();
-    File::open("input.txt")
-        .expect("input file not found")
-        .read_to_string(&mut contents)
-        .expect("unable to read file");
-    contents
-}
-
 fn calculate_frequency(input: String) -> i32 {
     input
         .split("\n")
@@ -18,7 +6,8 @@ fn calculate_frequency(input: String) -> i32 {
 }
 
 fn main() {
-    println!("{}", calculate_frequency(read_input()));
+    let input = include_str!("input.txt").into();
+    println!("{}", calculate_frequency(input));
 }
 
 #[test]

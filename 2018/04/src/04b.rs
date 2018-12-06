@@ -6,18 +6,7 @@ extern crate regex;
 use itertools::Itertools;
 use regex::Regex;
 use std::collections::HashMap;
-use std::fs::File;
-use std::io::prelude::*;
 use std::ops::Range;
-
-fn read_input() -> String {
-    let mut contents = String::new();
-    File::open("input.txt")
-        .expect("input file not found")
-        .read_to_string(&mut contents)
-        .expect("unable to read file");
-    contents
-}
 
 #[derive(Ord, PartialEq, PartialOrd, Eq, Debug)]
 enum Action {
@@ -120,7 +109,8 @@ fn solve(input: String) -> i32 {
 }
 
 fn main() {
-    println!("{}", solve(read_input()));
+    let input = include_str!("input.txt").into();
+    println!("{}", solve(input));
 }
 
 #[test]

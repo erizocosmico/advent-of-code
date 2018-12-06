@@ -1,15 +1,4 @@
-use std::fs::File;
-use std::io::prelude::*;
 use std::iter::FromIterator;
-
-fn read_input() -> String {
-    let mut contents = String::new();
-    File::open("input.txt")
-        .expect("input file not found")
-        .read_to_string(&mut contents)
-        .expect("unable to read file");
-    contents
-}
 
 fn scan_polymer(input: String) -> String {
     let mut units: Vec<_> = input.chars().collect();
@@ -37,7 +26,8 @@ fn reacts(a: char, b: char) -> bool {
 }
 
 fn main() {
-    println!("{}", scan_polymer(read_input()).len());
+    let input = include_str!("input.txt").into();
+    println!("{}", scan_polymer(input).len());
 }
 
 #[test]

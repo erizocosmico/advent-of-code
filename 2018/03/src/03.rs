@@ -5,17 +5,6 @@ extern crate regex;
 
 use itertools::Itertools;
 use regex::Regex;
-use std::fs::File;
-use std::io::prelude::*;
-
-fn read_input() -> String {
-    let mut contents = String::new();
-    File::open("input.txt")
-        .expect("input file not found")
-        .read_to_string(&mut contents)
-        .expect("unable to read file");
-    contents
-}
 
 #[derive(Clone)]
 struct Claim {
@@ -80,7 +69,8 @@ fn overlapping_inches(input: String) -> i32 {
 }
 
 fn main() {
-    println!("{}", overlapping_inches(read_input()));
+    let input = include_str!("input.txt").into();
+    println!("{}", overlapping_inches(input));
 }
 
 #[test]
