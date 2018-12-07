@@ -1,0 +1,16 @@
+[package]
+name = "day_07"
+version = "0.1.0"
+authors = ["Miguel Molina <miguel@erizocosmi.co>"]
+
+[[bin]]
+name = "07"
+path = "src/07.rs"
+
+[[bin]]
+name = "07b"
+path = "src/07b.rs"
+
+[dependencies]
+regex = "1.1.0"
+lazy_static = "1.2.0"
