@@ -1,0 +1,15 @@
+[package]
+name = "day_09"
+version = "0.1.0"
+authors = ["Miguel Molina <miguel@erizocosmi.co>"]
+
+[[bin]]
+name = "09"
+path = "src/09.rs"
+
+[[bin]]
+name = "09b"
+path = "src/09b.rs"
+
+[dependencies]
+slice-deque = "0.1.16"
