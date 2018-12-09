@@ -12,4 +12,3 @@ name = "09b"
 path = "src/09b.rs"
 
 [dependencies]
-slice-deque = "0.1.16"
