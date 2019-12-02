@@ -10,7 +10,7 @@ let required_fuel x =
 
 let () =
   let modules =
-    In_channel.read_all "input1.txt" |> String.rstrip |> String.split ~on:'\n'
+    In_channel.read_all "input.txt" |> String.rstrip |> String.split ~on:'\n'
   in
   modules
   |> List.map ~f:(fun x -> required_fuel (Int.of_string x))
