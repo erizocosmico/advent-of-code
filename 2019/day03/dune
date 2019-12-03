@@ -1,0 +1,4 @@
+(executables
+ (names day03 day03_2)
+ (libraries base stdio)
+ (preprocess (pps ppx_sexp_conv ppx_hash ppx_compare)))
