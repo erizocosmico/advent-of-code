@@ -23,5 +23,5 @@ func fuelNeededToAlign(_ positions: [Int], _ position: Int, _ fuelCost: (Int) ->
 	return positions.map { p in fuelCost(abs(p - position)) }.reduce(0, +)
 }
 
-print("*", (min...max).map { fuelNeededToAlign(positions, $0, constantFuelCost) }.min()!)
-print("**", (min...max).map { fuelNeededToAlign(positions, $0, triangularFuelCost) }.min()!)
+print("*", (min ... max).map { fuelNeededToAlign(positions, $0, constantFuelCost) }.min()!)
+print("**", (min ... max).map { fuelNeededToAlign(positions, $0, triangularFuelCost) }.min()!)

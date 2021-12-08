@@ -36,10 +36,10 @@ struct Line {
 
 	func points() -> [Point] {
 		if isVertical() {
-			return (min(start.y, end.y)...max(start.y, end.y)).map { Point(start.x, $0) }
+			return (min(start.y, end.y) ... max(start.y, end.y)).map { Point(start.x, $0) }
 		}
 
-		return (min(start.x, end.x)...max(start.x, end.x)).map { Point($0, start.y) }
+		return (min(start.x, end.x) ... max(start.x, end.x)).map { Point($0, start.y) }
 	}
 }
 
@@ -50,7 +50,7 @@ let lines = try String(contentsOfFile: "./input.txt", encoding: .utf8)
 
 let points = lines.flatMap { l in l.points() }
 let overlappingPoints = Dictionary(points.map { ($0, 1) }, uniquingKeysWith: +)
-	.filter { (_, freq) in freq > 1 }
+	.filter { _, freq in freq > 1 }
 	.count
 
 print(overlappingPoints)

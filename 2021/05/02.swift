@@ -16,7 +16,7 @@ struct Point: Hashable {
 	}
 }
 
-func compare(_ a: Int, _ b : Int) -> Int {
+func compare(_ a: Int, _ b: Int) -> Int {
 	if a < b { return -1 }
 	if a > b { return 1 }
 	return 0
@@ -53,7 +53,7 @@ let points = try String(contentsOfFile: "./input.txt", encoding: .utf8)
 	.flatMap { l in l.points() }
 
 let overlappingPoints = Dictionary(points.map { ($0, 1) }, uniquingKeysWith: +)
-	.filter { (_, freq) in freq > 1 }
+	.filter { _, freq in freq > 1 }
 	.count
 
 print(overlappingPoints)

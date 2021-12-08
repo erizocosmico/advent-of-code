@@ -20,7 +20,7 @@ struct Board {
 			}
 		}
 
-		for i in 0..<rows.first!.count {
+		for i in 0 ..< rows.first!.count {
 			if rows.allSatisfy({ $0[i] == -1 }) {
 				return true
 			}
@@ -47,7 +47,7 @@ let numbers = lines.first!.split(separator: ",").map { n in Int(n)! }
 var boards = lines.dropFirst(1).map { board in Board(board) }
 
 for num in numbers {
-	for i in 0..<boards.count {
+	for i in 0 ..< boards.count {
 		boards[i].mark(num)
 	}
 
