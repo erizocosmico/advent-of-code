@@ -30,7 +30,7 @@ let similarity_score l1 l2 =
 
 let () =
   let pairs =
-    In_channel.read_all "input.txt"
+    In_channel.read_all "inputs/01.txt"
     |> String.rstrip |> String.split_lines |> List.map ~f:parse_pair
   in
   let l1, l2 = List.unzip pairs in
